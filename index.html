@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ASCII Terminal</title>
+
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+    --bg:#080808;
+    --panel:#111;
+    --border:#1aff9c;
+    --text:#b6ffd8;
+    --green:#1aff9c;
+    --shadow:0 0 20px rgba(26,255,156,.25);
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    background:
+        radial-gradient(circle at top,#101010,#050505 70%);
+
+    color:var(--text);
+    font-family:"JetBrains Mono",monospace;
+    padding:40px;
+}
+
+.container{
+    max-width:1150px;
+    margin:auto;
+}
+
+.window{
+
+    border:2px solid var(--border);
+    border-radius:28px;
+    overflow:hidden;
+    box-shadow:var(--shadow);
+    background:#0d0d0d;
+
+}
+
+.topbar{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:18px 28px;
+
+    background:#151515;
+    border-bottom:1px solid var(--border);
+
+}
+
+.logo{
+
+    color:var(--green);
+    font-weight:bold;
+    letter-spacing:2px;
+
+}
+
+.nav{
+
+    display:flex;
+    gap:25px;
+
+}
+
+.nav a{
+
+    text-decoration:none;
+    color:var(--text);
+
+}
+
+.nav a:hover{
+
+    color:white;
+
+}
+
+.hero{
+
+    padding:70px;
+    text-align:center;
+
+}
+
+.hero pre{
+
+    color:var(--green);
+    font-size:12px;
+    line-height:1.05;
+    margin-bottom:35px;
+    white-space:pre;
+
+}
+
+.hero h1{
+
+    font-size:58px;
+    margin-bottom:15px;
+
+}
+
+.hero p{
+
+    color:#7beab5;
+    max-width:700px;
+    margin:auto;
+    line-height:1.7;
+
+}
+
+.buttons{
+
+    margin-top:40px;
+
+}
+
+button{
+
+    background:#101010;
+    color:var(--green);
+
+    border:2px solid var(--green);
+    border-radius:999px;
+
+    padding:14px 34px;
+    margin:8px;
+
+    cursor:pointer;
+    font-family:inherit;
+    transition:.25s;
+
+}
+
+button:hover{
+
+    background:var(--green);
+    color:black;
+    box-shadow:0 0 18px var(--green);
+
+}
+
+.grid{
+
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+    padding:45px;
+
+}
+
+.card{
+
+    border:2px solid #1b1b1b;
+    border-radius:24px;
+
+    padding:25px;
+
+    background:#101010;
+
+    transition:.3s;
+
+}
+
+.card:hover{
+
+    border-color:var(--green);
+    transform:translateY(-4px);
+    box-shadow:var(--shadow);
+
+}
+
+.card pre{
+
+    color:var(--green);
+    margin-bottom:12px;
+
+}
+
+.terminal{
+
+    margin:45px;
+    padding:30px;
+
+    background:black;
+
+    border:2px solid var(--green);
+    border-radius:22px;
+
+}
+
+.line{
+
+    margin:12px 0;
+
+}
+
+.prompt{
+
+    color:var(--green);
+
+}
+
+footer{
+
+    text-align:center;
+    margin-top:40px;
+    color:#6effbf;
+
+}
+
+.cursor{
+
+    animation:blink .9s infinite;
+
+}
+
+@keyframes blink{
+
+50%{
+opacity:0;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="window">
+
+<div class="topbar">
+
+<div class="logo">
+light_w4rior@internet:~$
+</div>
+
+<div class="nav">
+
+<b>Be ready...</b>
+
+</div>
+
+</div>
+
+<section class="hero">
+
+<pre>
+
+      .-------------------------------.
+     /  ____________________________   \
+    |  |                            |  |
+    |  |      ACCESS GRANTED        |  |
+    |  |____________________________|  |
+     \_______________________________/
+
+            .--.
+           |o_o |
+           |:_/ |
+          //   \ \
+         (|     | )
+        /'\_   _/`\
+        \___)=(___/
+
+</pre>
+
+<h1>LIGHT_W4RIOR</h1>
+
+<p>
+Computer hobbyist who knows some <b>cool things</b>.
+</p>
+
+<div class="buttons">
+
+<button onclick="window.location.href='https://github.com/lightw4rior'">GITHUB</button>
+
+</div>
+
+</section>
+
+<div class="grid">
+
+<div class="card">
+
+<pre>
++------------+
+|  PROJECTS  |
++------------+
+</pre>
+
+<b>Segmentation fault</b>
+
+</div>
+
+<div class="card">
+
+<pre>
++-----------+
+|  SKILLS   |
++-----------+
+</pre>
+
+Linux • C++ • Rust • Python • Offensive Security (kinda) • Reverse engineering
+
+</div>
+
+<div class="card">
+
+<pre>
++----------+
+| CONTACT  |
++----------+
+</pre>
+
+<b>light_w4rior</b> on discord.
+
+</div>
+
+</div>
+
+<div class="terminal">
+
+<div class="line"><span class="prompt">$</span> whoami</div>
+<div class="line">light_w4rior</div>
+
+<div class="line"><span class="prompt">$</span> uname -a</div>
+<div class="line">Ubuntu 26.04 LTS/div>
+
+<div class="line"><span class="prompt">$</span> cat about.txt</div>
+<div class="line" id="typing"></div>
+
+<div class="line">
+<span class="prompt">$</span>
+<span class="cursor">█</span>
+</div>
+
+</div>
+
+</div>
+
+<footer>
+<b>END</b>
+</footer>
+
+</div>
+
+<script>
+
+const txt="High school student • C++ • Rust • Linux • Offensive Security (kinda) • Reverse Engineering";
+
+let i=0;
+
+function type(){
+
+if(i<txt.length){
+
+document.getElementById("typing").innerHTML+=txt[i++];
+setTimeout(type,30);
+
+}
+
+}
+
+type();
+
+</script>
+
+</body>
+</html>
